@@ -5,4 +5,5 @@ data RoseTree a = RoseTree a [RoseTree a]
 
 -- | Размер дерева (количество узлов).
 sizeRoseTree :: RoseTree a -> Int
-sizeRoseTree = 
+sizeRoseTree (RoseTree x []) = 1
+sizeRoseTree (RoseTree x l) = 1 + sum(map sizeRoseTree l)
